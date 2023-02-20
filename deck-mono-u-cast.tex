@@ -1,0 +1,525 @@
+\documentclass[fontsize=12pt,paper=a4]{scrartcl}
+\usepackage{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{FiraSans}
+
+\usepackage{multicol}
+
+\usepackage{parskip}
+\setlength{\columnsep}{10pt}
+
+\usepackage{array}
+
+\renewcommand*{\titlepagestyle}{empty}
+
+\title{Mono U 8-Cast}
+\author{Nicolai Ruckel}
+\date{2022-12-03}
+
+
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+\newenvironment{decklist}{%
+    \begin{tabular}{>{\hspace{-4pt}}r<{\hspace{-3pt}}>{\hspace{-3pt}}l<{\hspace{-4pt}}}
+    }{%
+    \end{tabular}
+    \par
+}
+
+\newcommand{\card}[2]{#1 & #2\\}
+
+\newenvironment{sideboardguide}{%
+    \newpage
+    \begin{multicols}{4}
+        \begin{tiny}
+        }{%
+        \end{tiny}
+    \end{multicols}
+}
+
+\newenvironment{matchup}[1]{%
+    \begin{absolutelynopagebreak}
+        \textbf{#1}\par
+    }{%
+    \end{absolutelynopagebreak}
+    \par\vspace{2em}
+}
+
+\newenvironment{notes}{%
+}{%
+    \par
+}
+
+\begin{document}
+\maketitle
+\pagestyle{empty}
+
+\begin{multicols}{2}
+\section*{Maindeck}
+    \begin{decklist}
+        \card{4}{Frogmite}
+        \card{1}{Gingerbrute}
+        \card{4}{Memnite}
+        \card{2}{Myr Enforcer}
+        \card{4}{Ornithopter}
+        \card{4}{Sojourner's Companion}
+        \card{4}{Thought Monitor}
+        \card{4}{Thoughtcast}
+        \card{1}{Aether Spellbomb}
+        \card{4}{Cranial Plating}
+        \card{1}{Pithing Needle}
+        \card{2}{Relic of Progenitus}
+        \card{1}{Shadowspear}
+        \card{4}{Springleaf Drum}
+        \card{2}{Welding Jar}
+        \card{4}{Darksteel Citadel}
+        \card{1}{Island}
+        \card{4}{Mistvault Bridge}
+        \card{1}{Otawara, Soaring City}
+        \card{2}{Razortide Bridge}
+        \card{2}{Treasure Vault}
+        \card{4}{Urza's Saga}
+    \end{decklist}
+
+    \section*{Sideboard}
+    \begin{decklist}
+        \card{2}{Chalice of the Void}
+        \card{3}{Damping Sphere}
+        \card{1}{Grafdigger's Cage}
+        \card{2}{Hurkyl's Recall}
+        \card{4}{Metallic Rebuke}
+        \card{1}{Orvar, the All-Form}
+        \card{1}{Spell Pierce}
+        \card{1}{Tormod's Crypt}
+    \end{decklist}
+\end{multicols}
+
+
+\newgeometry{margin=.5cm}
+
+\begin{sideboardguide}
+    \begin{matchup}{Murktide}
+        \begin{notes}
+            Needle on EE/Bauble
+        \end{notes}
+        \begin{decklist}
+            \card{+2}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Myr Enforcer}
+            \card{-1}{Gingerbrute}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Hammertime}
+        \begin{notes}
+            Needle on Hammer/SFM/Nexus
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke (OTD)}
+            \card{+2}{Metallic Rebuke (OTP)}
+            \card{+2}{Chalice of the Void}
+            \card{+2}{Hurkyl's Recall}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-2}{Relic of Progenitus}
+            \card{-2}{Welding Jar}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Creativity}
+        \begin{notes}
+            Needle on Boseiju/W6
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+1}{Orvar, the All-Form}
+            \card{+1}{Spell Pierce}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Shadowspear}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Relic of Progenitus}
+            \card{-1}{Thoughtcast}
+            \card{-1}{Gingerbrute}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Rakdos Scam}
+        \begin{notes}
+            Needle on EE/Fetches
+        \end{notes}
+        \begin{decklist}
+            \card{+1}{Grafdigger's Cage}
+            \card{+1}{Tormod's Crypt}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Gingerbrute}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Rhinos}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+2}{Chalice of the Void}
+            \card{+1}{Spell Pierce}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Gingerbrute}
+            \card{-1}{Pithing Needle}
+            \card{-2}{Memnite}
+            \card{-1}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Burn}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+2}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Pithing Needle}
+            \card{-2}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Living End}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+2}{Chalice of the Void}
+            \card{+1}{Tormod's Crypt}
+            \card{+1}{Spell Pierce}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Pithing Needle}
+            \card{-1}{Aether Spellbomb}
+            \card{-2}{Myr Enforcer}
+            \card{-3}{Thoughtcast}
+            \card{-1}{Shadowspear}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Yawgmoth}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+1}{Grafdigger's Cage}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Memnite}
+            \card{-1}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{4C Pile}
+        \begin{notes}
+            Needle on W6/Boseiju/T3feri
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Aether Spellbomb}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Memnite}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{UW Control}
+        \begin{notes}
+            Needle on Teferi, Emperor, Shark Typhoon
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+1}{Spell Pierce}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Ornithopter}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Shadowspear}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{5C Zoo}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Gingerbrute}
+            \card{-1}{Pithing Needle}
+            \card{-2}{Relic of Progenitus}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Amulet Titan}
+        \begin{notes}
+            Needle on EE/Slayer's Stronghold
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+3}{Damping Sphere}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-2}{Thoughtcast}
+            \card{-1}{Frogmite}
+            \card{-2}{Myr Enforcer}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{G Tron}
+        \begin{notes}
+            Needle on Karn, the Great Creator/Oblivion Stone
+        \end{notes}
+        \begin{decklist}
+            \card{+3}{Damping Sphere}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Shadowspear}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Affinity}
+        \begin{decklist}
+            \card{+2}{Hurkyl's Recall}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Asmofood}
+        \begin{notes}
+            Needle on Book, Asmo, Time Sieve
+        \end{notes}
+        \begin{decklist}
+            \card{+2}{Hurkyl's Recall}
+            \card{+1}{Tormod's Crypt}
+            \card{+1}{Grafdigger's Cage}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Welding Jar}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Scales}
+        \begin{notes}
+            Needle on Ravager/Ballista/Nexus
+        \end{notes}
+        \begin{decklist}
+            \card{+2}{Hurkyl's Recall}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Merfolk}
+        \begin{notes}
+            Needle on Aether Vial
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-2}{Welding Jar}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Jund}
+        \begin{notes}
+            Needle on EE and Planeswalkers
+        \end{notes}
+    \end{matchup}
+    \begin{matchup}{Mill}
+        \begin{notes}
+            Needle on Fetches/Oboro/Field of Ruin/EE
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Aether Spellbomb}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Death and Taxes}
+        \begin{notes}
+            Needle on Stoneforge Mystic/Vial
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-2}{Welding Jar}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Scapeshift}
+        \begin{notes}
+            Needle on Boseiju/W6
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Relic of Progenitus}
+            \card{-1}{Shadowspear}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Glimpse}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+2}{Chalice of the Void}
+            \card{+1}{Grafdigger's Cage}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Pithing Needle}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Myr Enforcer}
+            \card{-1}{Memnite}
+            \card{-1}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Breach}
+        \begin{notes}
+            Needle on Grinding Station
+        \end{notes}
+        \begin{decklist}
+            \card{+3}{Damping Sphere}
+            \card{+1}{Grafdigger's Cage}
+            \card{+1}{Tormod's Crypt}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Gingerbrute}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Mono B Coffers}
+        \begin{notes}
+            Needle on Karn, the Great Creator/Liliana of the Veil/Blast Zone
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Shadowspear}
+            \card{-1}{Myr Enforcer}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Belcher}
+        \begin{notes}
+            Needle on Belcher
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+3}{Damping Sphere}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Shadowspear}
+            \card{-2}{Relic of Progenitus}
+            \card{-1}{Myr Enforcer}
+            \card{-2}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Eldrazi Tron}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Relic of Progenitus}
+            \card{-2}{Welding Jar}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Reanimator}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+1}{Grafdigger's Cage}
+            \card{+1}{Tormod's Crypt}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Pithing Needle}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Shadowspear}
+            \card{-2}{Welding Jar}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Calibrated Blast}
+        \begin{notes}
+            Needle on Boseiju
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+            \card{+1}{Grafdigger's Cage}
+            \card{+1}{Tormod's Crypt}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Gingerbrute}
+            \card{-2}{Thoughtcast}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{5C BTL}
+        \begin{notes}
+            Needle on W6/Fetches
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-1}{Memnite}
+            \card{-1}{Relic of Progenitus}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Prowess}
+        \begin{decklist}
+            \card{+2}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Gingerbrute}
+            \card{-1}{Pithing Needle}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Heliod Combo}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-2}{Relic of Progenitus}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Dredge}
+        \begin{decklist}
+            \card{+1}{Grafdigger's Cage}
+            \card{+1}{Tormod's Crypt}
+        \end{decklist}
+        \begin{decklist}
+            \card{-1}{Aether Spellbomb}
+            \card{-1}{Pithing Needle}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Goblins}
+        \begin{notes}
+            Needle on Snoop
+        \end{notes}
+        \begin{decklist}
+            \card{+4}{Metallic Rebuke}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Myr Enforcer}
+            \card{-2}{Relic of Progenitus}
+        \end{decklist}
+    \end{matchup}
+\end{sideboardguide}
+\end{document}
+
