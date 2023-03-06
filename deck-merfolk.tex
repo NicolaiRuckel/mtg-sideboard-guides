@@ -1,0 +1,478 @@
+\documentclass[fontsize=12pt,paper=a4]{scrartcl}
+\usepackage{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{FiraSans}
+
+\usepackage{multicol}
+
+\usepackage{parskip}
+% \setlength{\columnsep}{0pt}
+
+\usepackage{array}
+
+\usepackage{tabularx}
+
+\renewcommand*{\titlepagestyle}{empty}
+
+\title{Merfolk}
+\author{Nicolai Ruckel}
+\date{2023-02-25}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+    \newgeometry{margin=1cm}
+    \begin{minipage}{.14\textwidth}
+       \quad 
+    \end{minipage}
+    \begin{minipage}{.84\textwidth}
+        {%
+            \begin{minipage}{.65\textwidth}
+                \Large
+                    \MakeUppercase{Deck Registration Sheet}
+            \end{minipage}
+            \hfill
+            \begin{minipage}{.14\textwidth}
+                \flushright
+                \scriptsize First Letter of Last Name:
+            \end{minipage}
+            \quad
+            \begin{minipage}{.1\textwidth}
+                \Large R
+            \end{minipage}
+        }
+        \par
+        \vspace{1em}
+        \raggedright
+        \begin{tabularx}{\textwidth}{@{}lXlX}
+            Name: & \@author &
+            Date: & \@date\\
+            Deck: & \@title &
+            Event: & Pyramiden Cup\\
+                   &&Location: & Spiele-Pyramide Karlsruhe\\
+        \end{tabularx}
+    \end{minipage}
+    \vspace{1em}
+}
+\makeatother
+
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+\newenvironment{decklist}{%
+    \begin{tabular}{>{\hspace{-4pt}}r<{\hspace{-3pt}}>{\hspace{-3pt}}l<{\hspace{-4pt}}}
+    }{%
+    \end{tabular}
+    \par
+}
+
+\newcommand{\card}[2]{#1 & #2\\}
+
+\newenvironment{sideboardguide}{%
+    \newpage
+    \begin{multicols}{4}
+        \begin{small}
+        }{%
+        \end{small}
+    \end{multicols}
+}
+
+\newenvironment{matchup}[1]{%
+    \begin{absolutelynopagebreak}
+        \textbf{#1}\par
+    }{%
+    \end{absolutelynopagebreak}
+    \par\vspace{2em}
+}
+
+\newenvironment{notes}{%
+}{%
+    \par
+}
+
+\usepackage{eso-pic, rotating}
+
+
+\begin{document}
+% \maketitle
+\pagestyle{empty}
+
+\newgeometry{margin=2cm}
+
+% Sidebar
+\AddToShipoutPictureBG*{\AtTextLowerLeft{\llap{\rotatebox[origin=lb]{90}{%
+                \begin{tabular}{llll}
+                    Last Name: &
+                    Ruckel &
+                    First Name: &
+                    Nicolai\\
+                \end{tabular}
+}\quad\enspace}}}
+
+\begin{minipage}{.10\textwidth}
+   \quad 
+\end{minipage}
+\begin{minipage}{.88\textwidth}
+    {%
+        \begin{minipage}{.65\textwidth}
+            \Large
+                \MakeUppercase{Deck Registration Sheet}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{.14\textwidth}
+            \flushright
+            \scriptsize First Letter of Last Name:
+        \end{minipage}
+        \quad
+        \begin{minipage}{.1\textwidth}
+            \Large R
+        \end{minipage}
+    }
+    \par
+    \vspace{1em}
+    \raggedright
+    \small
+    \begin{tabularx}{\textwidth}{@{}lXlX@{}}
+        Date & 25.02.2023 &
+        Event: & Pyramiden Cup\\
+        Location: & Spiele-Pyramide Karlsruhe &
+        Deck Name: & Merfolk\\
+    \end{tabularx}
+\end{minipage}
+\vspace{1em}
+
+\begin{multicols}{2}
+    \begin{Large}
+        Maindeck\par
+    \end{Large}
+    \large
+    \begin{decklist}
+        \card{4}{Lord of Atlantis}
+        \card{4}{Master of the Pearl Trident}
+        \card{4}{Merfolk Trickster}
+        \card{2}{Rishadan Dockhand}
+        \card{2}{Subtlety}
+        \card{2}{Force of Negation}
+        \card{4}{Svyelun of Sea and Sky}
+        \card{4}{Tide Shaper}
+        \card{4}{Vodalian Hexcatcher}
+        \card{4}{Dismember}
+        \card{4}{Aether Vial}
+        \card{2}{Spreading Seas}
+        \card{4}{Cavern of Souls}
+        \card{10}{Island}
+        \card{4}{Mutavault}
+        \card{2}{Otawara, Soaring City}
+    \end{decklist}
+
+    \begin{Large}
+        Sideboard\par
+    \end{Large}
+    \begin{decklist}
+        \card{3}{Flusterstorm}
+        \card{2}{Force of Negation}
+        \card{3}{Harbinger of the Tides}
+        \card{3}{Chalice of the Void}
+        \card{2}{Spreading Seas}
+        \card{2}{Subtlety}
+    \end{decklist}
+\end{multicols}
+
+
+\newgeometry{margin=.5cm}
+
+\begin{sideboardguide}
+    \begin{matchup}{Murktide}
+        Maybe Chalice on the play?
+        \begin{decklist}
+            \card{+3}{Flusterstorm}
+            \card{+3}{Harbinger of the Tides}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Subtlety}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Rishadan Dockhand}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Hammertime}
+        \begin{notes}
+            Be aware of Blacksmith's Skill when playing Dismember
+        \end{notes}
+        \begin{decklist}
+            \card{+2}{Spreading Seas}
+            \card{+3}{Harbinger of the Tides}
+            \card{+3}{Chalice of the Void}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Subtlety}
+            \card{-2}{Merfolk Trickster}
+            \card{-2}{Rishadan Dockhand}
+            \card{-4}{Svyelun of Sea and Sky}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Creativity}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+3}{Flusterstorm}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+            \card{-4}{Dismember}
+            \card{-1}{Tide Shaper}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Rakdos Scam}
+        \begin{decklist}
+            \card{+2}{Spreading Seas}
+            \card{+3}{Harbinger of the Tides}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Aether Vial}
+            \card{-3}{Tide Shaper}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Amulet}
+        \begin{decklist}
+            \card{+2}{Subtlety}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Merfolk Trickster}
+            \card{-2}{Svyelun of Sea and Sky}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{4c Omnath}
+        \begin{decklist}
+            \card{+2}{Subtlety}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Merfolk Trickster}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Burn}
+        Play:\par
+        \begin{decklist}
+            \card{+2}{Spreading Seas}
+            \card{+3}{Flusterstorm}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Dismember}
+            \card{-3}{Rishadan Dockhand}
+        \end{decklist}
+        Draw:\par
+        \begin{decklist}
+            \card{+3}{Flusterstorm}
+            \card{+2}{Force of Negation}
+            \card{+1}{Harbinger of Tides}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Tide Shaper}
+            \card{-4}{Dismember}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Yawgmoth}
+        \begin{decklist}
+            \card{+2}{Subtlety}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Rishadan Dockhand}
+            \card{-2}{Merfolk Trickster}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{4c Rhinos}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+3}{Flusterstorm}
+            \card{+3}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Dismember}
+            \card{-2}{Tideshaper}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Rishadan Dockhand}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{5c Rhinos}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+3}{Flusterstorm}
+            \card{+3}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Dismember}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Rishadan Dockhand}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Living End}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+3}{Flusterstorm}
+            \card{+3}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Dismember}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Subtlety}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Tron}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+2}{Subtlety}
+            \card{+2}{Spreading Seas}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Dismember}
+            \card{-2}{Merfolk Trickster}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Domain Zoo}
+        \begin{decklist}
+            \card{+3}{Harbinger of the Tides}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-3}{Rishadan Dockhand}
+            \card{-2}{Spreading Seas}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Grinding Station Breach}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+3}{Chalice of the Void}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Subtlety}
+            \card{-3}{Merfolk Trickster}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Grixis Shadow}
+        \begin{decklist}
+            \card{+3}{Chalice of the Void}
+            \card{+3}{Harbinger of the Tides}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Subtlety}
+            \card{-2}{Force of Negation}
+            \card{-2}{Vodalian Hexcatcher}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Merfolk}
+        Play:\par
+        \begin{decklist}
+            \card{+3}{Harbinger of the Tides}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+            \card{-2}{Lord of Atlantis}
+            \card{-1}{Rishadan Dockhand}
+        \end{decklist}
+        Draw:\par
+        \begin{decklist}
+            \card{+3}{Harbinger of the Tides}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+            \card{-3}{Lord of Atlantis}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Omnath Control}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Goblins}
+        \begin{decklist}
+            \card{+2}{Harbinger of the Tides}
+            \card{+2}{Spreading Seas}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Svyelun of Sea and Sky}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{UWx Control}
+        \begin{decklist}
+            \card{+2}{Subtlety}
+            \card{+2}{Force of Negation}
+            \card{+2}{Flusterstorm}
+        \end{decklist}
+        \begin{decklist}
+            \card{-2}{Spreading Seas}
+            \card{-4}{Dismember}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Dredge}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+2}{Subtlety}
+            \card{+3}{Flusterstorm}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Dismember}
+            \card{-3}{Merfolk Trickster}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Affinity}
+        \begin{decklist}
+            \card{+2}{Harbinger of the Tides}
+            \card{+2}{Force of Negation}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Rishadan Dockhand}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Hardened Scales}
+        \begin{decklist}
+            \card{+2}{Subtlety}
+            \card{+2}{Spreading Seas}
+            \card{+3}{Harbinger of the Tides}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Merfolk Trickster}
+            \card{-3}{Rishadan Dockhand}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Infect Storm}
+        \begin{decklist}
+            \card{+3}{Chalice of the Void}
+            \card{+2}{Force of Negation}
+            \card{+2}{Subtlety}
+        \end{decklist}
+    \end{matchup}
+    \begin{matchup}{Mill}
+        \begin{notes}
+            We add more cards than we take out here.
+        \end{notes}
+        \begin{decklist}
+            \card{+2}{Force of Negation}
+            \card{+3}{Chalice of the Void}
+            \card{+2}{Subtlety}
+        \end{decklist}
+        \begin{decklist}
+            \card{-4}{Svyelun}
+            \card{-2}{Spreading Seas}
+            \card{-1}{Rishadan Dockhand}
+        \end{decklist}
+    \end{matchup}
+\end{sideboardguide}
+\end{document}
+
