@@ -17,7 +17,7 @@ jobs:
       - name: Generate release tag
         id: tag
         run: |
-          echo "::set-output name=release_tag::Sideboard_Guides_$(date +"%Y.%m.%d_%H-%M")"
+          echo "release_tag=Sideboard_Guides_$(date + "%Y-%m-%dT%H%M")" >> $GITHUB_OUTPUT
       - name: Release
         uses: softprops/action-gh-release@v1
         env:
